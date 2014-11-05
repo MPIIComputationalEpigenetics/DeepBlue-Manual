@@ -29,5 +29,5 @@ chrX	166650296
 chrY	15902555
 chrM	16299"""
 
-(status, genome_id) = server.insert_genome("mm9_simple", "mm9 genome with the main chromosomes", data, user_key)
+(status, genome_id) = server.add_genome("mm9_simple", "mm9 genome with the main chromosomes", data, user_key)
 ```
