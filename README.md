@@ -1,4 +1,4 @@
-![DeepBlue Epigenomic Data Server](http://deepblue.mpi-inf.mpg.de/imgs/deepblue_alt.png)
+![DeepBlue Epigenomic Data Server](http://deepblue.mpi-inf.mpg.de/img/logo.png)
 
 
 # DeepBlue Epigenomic Data Server Manual
