@@ -1,6 +1,6 @@
 ## Intersecting Regions
 
-The command [intersection](http://deepblue.mpi-inf.mpg.de/api.html#api-intersection) selects the regions that intersect with another set of regions.
+The command [intersection](http://deepblue.mpi-inf.mpg.de/api.php#api-intersection) selects the regions that intersect with another set of regions.
 The correct usage is to obtain the regions from experiments that overlap with some annotation, e.g., all sites that overlap with some CpG Island.
 The command has three parameters: the ID of the regions to be filtered, and the ID of the regions to be used for the filtering, and the user key. The result is a query of the regions of the first set that overlap with the regions of the second set:
 

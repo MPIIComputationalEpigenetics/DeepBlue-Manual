@@ -19,13 +19,13 @@ The following table contains the identifier prefixes and their data type:
 | t          | Technique       |
 | q          | Query           |
 
-The [info](http://deepblue.mpi-inf.mpg.de/api.html#api-info) command is to inspect the identifier content:
+The [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command is to inspect the identifier content:
 ```python
 server.info("e1", user_key)
 ```
 
 
-We can use the [info](http://deepblue.mpi-inf.mpg.de/api.html#api-info) command to view the samples' content:
+We can use the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command to view the samples' content:
 
 ```python
 (s, related) = server.get_bio_source_related("blood", user_key)

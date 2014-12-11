@@ -1,18 +1,18 @@
 ## Free Text Search
 
 The listing operations are useful for listing the IDs and names, but not for searching through data content.
-For example, if we wish to search for an [Experiment](../02-data-types/02-01-experiments.md) with associated metadata, we must [list all the experiments](http://deepblue.mpi-inf.mpg.de/api.html#api-list_experiments), execute [info](http://deepblue.mpi-inf.mpg.de/api.html#api-info) and analyze the result of each experiment.
-Also, the [list_samples](http://deepblue.mpi-inf.mpg.de/api.html#api-list_samples) command needs the correct metadata content to find the expected sample.
+For example, if we wish to search for an [Experiment](../02-data-types/02-01-experiments.md) with associated metadata, we must [list all the experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments), execute [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) and analyze the result of each experiment.
+Also, the [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) command needs the correct metadata content to find the expected sample.
 In short, it is not an optimal way to search data.
-The [search](http://deepblue.mpi-inf.mpg.de/api.html#api-search) command is the optimal method for data searching in DeepBluebecause it simplifies the task of finding data.
+The [search](http://deepblue.mpi-inf.mpg.de/api.php#api-search) command is the optimal method for data searching in DeepBluebecause it simplifies the task of finding data.
 
-The [search](http://deepblue.mpi-inf.mpg.de/api.html#api-search) command has three parameters: the free text for which to do search, the data type (optional), and the *user_key*. The data type defines the collection on which the search will be made.
+The [search](http://deepblue.mpi-inf.mpg.de/api.php#api-search) command has three parameters: the free text for which to do search, the data type (optional), and the *user_key*. The data type defines the collection on which the search will be made.
 The available collections are: *annotations*, *biosources*, *epigenetic_marks*, *experiments*, *genomes*, *projects*, *samples*, *sample fields*, *techniques*, *tilings*, and *column_types*. Multiple data types can be combined, i.e., it is possible to search for the term "cancer" in all experiments and samples.
 The search command will search for the free text input in all data content.
 This means that the command will look at the data name, description, other data type attributes, and also at the extra metadata.
 
-The [search](http://deepblue.mpi-inf.mpg.de/api.html#api-search) command result is a set of tuples, ordered by relevance, containing the data id, data name, and data type. The command returns a maximum of 100 values.
-The command returns a set containing the IDs and names; the [info](http://deepblue.mpi-inf.mpg.de/api.html#api-info) command offers more information about the retrieved items.
+The [search](http://deepblue.mpi-inf.mpg.de/api.php#api-search) command result is a set of tuples, ordered by relevance, containing the data id, data name, and data type. The command returns a maximum of 100 values.
+The command returns a set containing the IDs and names; the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command offers more information about the retrieved items.
 
 In the following example, we search for all samples containing either the word "cancer" **or** "blood" in their description:
 ```python
@@ -51,7 +51,7 @@ Please be aware that the terms inside  ```\" \"``` are searched for exactly as t
 
 
 #### More Examples
-[Search](http://deepblue.mpi-inf.mpg.de/api.html#api-search) can be used together with the [info](http://deepblue.mpi-inf.mpg.de/api.html#api-info) command:
+[Search](http://deepblue.mpi-inf.mpg.de/api.php#api-search) can be used together with the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command:
 
 ```
 python

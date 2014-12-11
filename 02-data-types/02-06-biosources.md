@@ -5,12 +5,12 @@ A BioSource contains a name, description, and additional metadata.
 DeepBlue currently imports BioSources from the [ENCODE controlled vocabulary](ftp://hgdownload.cse.ucsc.edu/apache/cgi-bin/encode/cv.ra), and from three ontologies: [Cell Type](http://www.ontobee.org/browser/index.php?o=CL), [Experimental Factor Ontology](http://www.ontobee.org/browser/index.php?o=EFO), and [Uber Anatomy Ontology](http://www.ontobee.org/browser/index.php?o=UBERON).
 Each term in the BioSource controlled vocabulary has a name, description (if available), the address of a full description of the term, ontology name, namespace of the term, and the ontology comment about the term.
 
-The command [add_bio_source](http://deepblue.mpi-inf.mpg.de/api.html#api-add_bio_source) is used to insert a new BioSource. It is also possible to list all BioSources using the command [list_bio_sources](http://deepblue.mpi-inf.mpg.de/api.html#api-list_bio_sources) and to search all BioSources with a similar name through the command [list_similar_bio_sources](http://deepblue.mpi-inf.mpg.de/api.html#api-list_similar_bio_sources).
+The command [add_bio_source](http://deepblue.mpi-inf.mpg.de/api.php#api-add_bio_source) is used to insert a new BioSource. It is also possible to list all BioSources using the command [list_bio_sources](http://deepblue.mpi-inf.mpg.de/api.php#api-list_bio_sources) and to search all BioSources with a similar name through the command [list_similar_bio_sources](http://deepblue.mpi-inf.mpg.de/api.php#api-list_similar_bio_sources).
 
 Identical BioSources can have different names, referred to as synonyms.
 For example, the *leukocyte* BioSource has the synonyms *leucocyte* and *white blood cells*.
-A synonym can be set using the [set_bio_source_synonym](http://deepblue.mpi-inf.mpg.de/api.html#api-set_bio_source_synonym) command.
-A BioSource list of synonyms may be retrieved with the [get_bio_source_synonyms](http://deepblue.mpi-inf.mpg.de/api.html#api-get_bio_source_synonyms) command:
+A synonym can be set using the [set_bio_source_synonym](http://deepblue.mpi-inf.mpg.de/api.php#api-set_bio_source_synonym) command.
+A BioSource list of synonyms may be retrieved with the [get_bio_source_synonyms](http://deepblue.mpi-inf.mpg.de/api.php#api-get_bio_source_synonyms) command:
 
 ```python
 (s, synonyms) = server.get_bio_source_synonyms("blood", user_key)
@@ -20,8 +20,8 @@ The ```synonyms``` variable will contain ```['blood', 'portion of blood', 'verte
 DeepBlue also organizes all available BioSources into a hierarchy.
 The hierarchy establishes which terms embrace each other.
 For example, the BioSource *blood* is more embracing than *leukocyte*, and the term *leukocyte* is more embracing than *lymphocyte*.
-The command [set_bio_source_parent](http://deepblue.mpi-inf.mpg.de/api.html#api-set_bio_source_parent) is used to set a relationship between two BioSources.
-Use the [get_bio_source_children](http://deepblue.mpi-inf.mpg.de/api.html#api-get_bio_source_children) command to list the BioSources that fall under another BioSource within the BioSources hierarchy.
+The command [set_bio_source_parent](http://deepblue.mpi-inf.mpg.de/api.php#api-set_bio_source_parent) is used to set a relationship between two BioSources.
+Use the [get_bio_source_children](http://deepblue.mpi-inf.mpg.de/api.php#api-get_bio_source_children) command to list the BioSources that fall under another BioSource within the BioSources hierarchy.
 
 ```python
 (s, children) = server.get_bio_source_children("blood", user_key)
@@ -31,7 +31,7 @@ The ```children``` content will be:
 ['okay', ['blood', 'GM12878', 'K562', 'K562b', 'BC_Leukocyte_UHN00204', 'CD20+', 'CD20+_RO01778', 'CD20+_RO01794', 'CD34+_Mobilized', 'CD4+_Naive_Wb11970640', 'CD4+_Naive_Wb78495824', 'CLL', 'CMK', 'Dnd41', 'GM10248', 'GM10266', 'GM13976', 'GM13977', 'GM20000', 'H0287', 'HL-60', 'hMNC-PB', 'hMNC-PB_0082430.9', 'hMNC-PB_0022330.9', 'hMNC-CB', 'hMNC-CB_9111701.6', 'hMNC-CB_8072802.6', 'Jurkat', 'Loucy', 'Lymphoblastoid_cell_line', 'GM18507', 'GM12801', 'GM18505', 'GM12873', 'GM12872', 'GM19193', 'GM18526', 'GM19099', 'GM19238', 'GM19239', 'GM08714', 'GM06990', 'GM12878-XiMat', 'GM19240', 'GM15510', 'GM10847', 'GM12875', 'GM12874', 'GM12871', 'GM12870', 'GM12813', 'GM12812', 'GM12892', 'GM12891', 'GM18951', 'GM12867', 'GM12868', 'GM12869', 'GM12866', 'GM12864', 'GM12865', 'NB4', 'PBDE', 'PBMC', 'Raji', 'T_cells_CD4+', 'Adult_CD4_Th0', 'Adult_CD4_Th1', 'Cord_CD4_Th1', 'Cord_CD4_Th0', 'Adult_CD4_naive', 'Cord_CD4_naive', 'Th1', 'Th1_Wb33676984', 'Th1_Wb54553204', 'Th17', 'Th2', 'Th2_Wb33676984', 'Th2_Wb54553204', 'Treg_Wb78495824', 'Treg_Wb83319432', '416B', 'A20', 'B-cell_(CD19+)', 'B-cell_(CD43-)', 'BMDM', 'CH12', 'EPC_(CD117+_CD71-_TER119-)', 'Erythrobl', 'G1E', 'G1E-ER4', 'G1E-ER4', 'L1210', 'MEP', 'Megakaryo', 'MEL', 'mG/ER', 'NIH-3T3', 'THelper-Activated', 'T-Naive', 'TReg-Activated', 'TReg', 'umbilical cord blood', 'arterial blood', 'venous blood', 'capillary blood']]
 ```
 
-The command [get_bio_source_related](http://deepblue.mpi-inf.mpg.de/api.html#api-get_bio_source_related) returns all BioSources under the given BioSource and their synonyms:
+The command [get_bio_source_related](http://deepblue.mpi-inf.mpg.de/api.php#api-get_bio_source_related) returns all BioSources under the given BioSource and their synonyms:
 
 ```python
 (s, related) = server.get_bio_source_related("blood", user_key)
@@ -54,14 +54,14 @@ The metadata may contain any kind of information about the source such as the or
 The metadata fields are very flexible, and it is recommended that all sample information be included here.
 We will try to include as much metadata as possible during a sample's import process.
 
-The sample metadata fields should be included before using the command [add_sample_field](http://deepblue.mpi-inf.mpg.de/api.html#api-add_sample_field).
+The sample metadata fields should be included before using the command [add_sample_field](http://deepblue.mpi-inf.mpg.de/api.php#api-add_sample_field).
 The necessary information to create a new field is the field name, the type (string or numeral), description, and the *user_key*.
 An error message will be returned if a field with the same name already exists.
-A list of all similar field names can be obtained using the command [list_similar_sample_fields](http://deepblue.mpi-inf.mpg.de/api.html#api-list_similar_sample_fields), and a list of all sample fields with the command [list_sample_fields](http://deepblue.mpi-inf.mpg.de/api.html#api-list_sample_fields).
+A list of all similar field names can be obtained using the command [list_similar_sample_fields](http://deepblue.mpi-inf.mpg.de/api.php#api-list_similar_sample_fields), and a list of all sample fields with the command [list_sample_fields](http://deepblue.mpi-inf.mpg.de/api.php#api-list_sample_fields).
 
-The [add_sample](http://deepblue.mpi-inf.mpg.de/api.html#api-add_sample) command is used to insert a new sample together with its metadata.
-The command [list_samples](http://deepblue.mpi-inf.mpg.de/api.html#api-list_samples) lists all samples belonging to a given BioSource and their metadata.
-The [list_samples](http://deepblue.mpi-inf.mpg.de/api.html#api-list_samples) command returns a list of key-value elements, where the key is the sample ID, and the elements are the metadata of the sample:
+The [add_sample](http://deepblue.mpi-inf.mpg.de/api.php#api-add_sample) command is used to insert a new sample together with its metadata.
+The command [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) lists all samples belonging to a given BioSource and their metadata.
+The [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) command returns a list of key-value elements, where the key is the sample ID, and the elements are the metadata of the sample:
 
 ```python
 server.list_samples("T_cells_CD4+", {}, user_key)
@@ -71,7 +71,7 @@ This command returns:
 ['okay', ['s342', {'lineage': 'mesoderm', 'karyotype': 'unknown', 'description': 'Parent cell line for T cells CD4+.', 'bio_source_name': 'T_cells_CD4+', 'lab': 'Crawford', 'sex': 'B', 'user': 'Populator', 'tier': '3', '_id': 's342', 'organism': 'human'}]]
 ```
 
-The [list_samples](http://deepblue.mpi-inf.mpg.de/api.html#api-list_samples) command may be used to retrieve samples based on their metadata. For instance, to retrieve all samples that have "tier 3" in their metadata:
+The [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) command may be used to retrieve samples based on their metadata. For instance, to retrieve all samples that have "tier 3" in their metadata:
 ```python
 server.list_samples(None, {"tier":"3"}, user_key)
 ```

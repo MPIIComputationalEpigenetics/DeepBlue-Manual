@@ -1,7 +1,7 @@
 ## Aggregation
 
-DeepBlue can [aggregate](http://deepblue.mpi-inf.mpg.de/api.html#api-aggregate) groups of regions into larger regions.
-The [aggregate](http://deepblue.mpi-inf.mpg.de/api.html#api-aggregate) command requires three parameters: `query_data_id`, `query_regions_id`, and the data column name that will be the aggregation pivot.
+DeepBlue can [aggregate](http://deepblue.mpi-inf.mpg.de/api.php#api-aggregate) groups of regions into larger regions.
+The [aggregate](http://deepblue.mpi-inf.mpg.de/api.php#api-aggregate) command requires three parameters: `query_data_id`, `query_regions_id`, and the data column name that will be the aggregation pivot.
 
 It is possible to retrieve the aggregation result with the aggregation metafield:
 

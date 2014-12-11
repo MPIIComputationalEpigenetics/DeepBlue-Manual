@@ -14,7 +14,7 @@ One experiment has the following metadata:
   * *Extra metadata* — additional metadata. A key-value dictionary with extra information about the experiment
   * *User* — User who inserted the experiment.
 
-The [list_experiments](http://deepblue.mpi-inf.mpg.de/api.html#api-list_experiments) command is used to obtain all Experiments that match the given metadata content.
+The [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) command is used to obtain all Experiments that match the given metadata content.
 This command has the parameters: genome assembly, epigenetic mark, sample ID, technique, project, and *user_key*.
 All parameters, with the exception of *user_key*, are optional. Setting a parameter to *None* means that this parameter will not be used for the experiment selection. For example, it is possible to list all experiments from the genome assembly *hg19*, by entering the genome assembly and passing an empty string to all other metadata parameters:
 

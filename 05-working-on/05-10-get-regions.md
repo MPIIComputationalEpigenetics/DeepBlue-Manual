@@ -1,9 +1,9 @@
 ## Get Regions
 
-The command [get_regions](http://deepblue.mpi-inf.mpg.de/api.html#api-get_regions) is used for retrieving sequences from the server.
+The command [get_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-get_regions) is used for retrieving sequences from the server.
 The command parameters are the ``query_id`` and the ``format``.
 
-The format is the name of the fields that were given in the [add_experiment](http://deepblue.mpi-inf.mpg.de/api.html#api-add_experiment) and [add_annotations](http://deepblue.mpi-inf.mpg.de/api.html#api-add_annotation).
+The format is the name of the fields that were given in the [add_experiment](http://deepblue.mpi-inf.mpg.de/api.php#api-add_experiment) and [add_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-add_annotation).
 
 *Example:* Retrieving all regions from chromosome 1, *blood* as biosource, *methylation* as epigenetic mark , and containing the key *karyotype* with the value *cancer* in the sample:
 

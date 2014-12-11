@@ -1,14 +1,14 @@
 ## Selecting Experiments
 
-The [select_regions](http://deepblue.mpi-inf.mpg.de/api.html#api-select_regions) command is used to access the experiments' data.
-The [select_regions](http://deepblue.mpi-inf.mpg.de/api.html#api-select_regions) command is similar to [select_annotations](http://deepblue.mpi-inf.mpg.de/api.html#api-select_annotations). The difference is that [select_regions](http://deepblue.mpi-inf.mpg.de/api.html#api-select_regions) accepts ```epigenetic_mark```, ```sample```, ```technique```, and ```project``` parameters.
+The [select_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) command is used to access the experiments' data.
+The [select_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) command is similar to [select_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-select_annotations). The difference is that [select_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) accepts ```epigenetic_mark```, ```sample```, ```technique```, and ```project``` parameters.
 
 
 ### Selecting Experiments Example
 
 
 *Example:*
-Firstly, we use the [get_bio_source_related](http://deepblue.mpi-inf.mpg.de/api.html#api-get_bio_source_related) command to retrieve all biosources related to the term "blood" and then we select only the biosources names from the ```blood_related``` list.
+Firstly, we use the [get_bio_source_related](http://deepblue.mpi-inf.mpg.de/api.php#api-get_bio_source_related) command to retrieve all biosources related to the term "blood" and then we select only the biosources names from the ```blood_related``` list.
 Them, we select all samples that use these biosources and get their IDs.
 Finally, we select all ```chromosome``` *chr1* regions from the experiments that have ```genome``` *hg19*, ```epigenetic_mark``` *methylation* and the found samples and print the chromosome, start, and end of these regions:
 

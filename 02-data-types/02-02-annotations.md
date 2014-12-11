@@ -5,7 +5,7 @@ Each Annotation is composed by a region set, a name, genome, and *user* attribut
 
 Annotations are used to store genomic regions that do not come from an epigenomic experiment, but contain other (epi-)genetic information.
 Examples of annotations are: CpG islands and genes.
-It is possible to list all available annotations using the [list_annotations](http://deepblue.mpi-inf.mpg.de/api.html#api-list_annotations) command. The *list_annotations* command has two parameters: *Genome* and *user_key*.
+It is possible to list all available annotations using the [list_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-list_annotations) command. The *list_annotations* command has two parameters: *Genome* and *user_key*.
 
 The following source code demonstrates how to list all available annotations for the genome assembly *hg19*:
 

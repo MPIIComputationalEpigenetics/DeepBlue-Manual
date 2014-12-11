@@ -3,7 +3,7 @@ The *user_key* is your unique and personal identification for the DeepBlue Epige
 
 It is **confidential** and **must not be shared**, even with co-workers. Contact us if you encounter any problems with your key.
 
-The easiest way to verify your *user_key* is through the [echo](http://deepblue.mpi-inf.mpg.de/api.html#api-echo) command.
+The easiest way to verify your *user_key* is through the [echo](http://deepblue.mpi-inf.mpg.de/api.php#api-echo) command.
 The following code shows how you can verify your *user_key*.
 Before executing this code, change the variable ```user_key``` to your proper *user_key*.
 

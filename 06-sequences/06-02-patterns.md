@@ -1,7 +1,7 @@
 ## Patterns
 
-The command [find_pattern](http://deepblue.mpi-inf.mpg.de/api.html#api-find_pattern) creates an annotation based on a given sequence pattern.
-This command has three parameters: the pattern, in [Perl Regular Expression Syntax](http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html), the ```genome```, and a boolean, to specify if the pattern matching will be overlapping or non-overlapping.
+The command [find_pattern](http://deepblue.mpi-inf.mpg.de/api.php#api-find_pattern) creates an annotation based on a given sequence pattern.
+This command has three parameters: the pattern, in [Perl Regular Expression Syntax](http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/php/boost_regex/syntax/perl_syntax.php), the ```genome```, and a boolean, to specify if the pattern matching will be overlapping or non-overlapping.
 
 The difference between overlapping and non-overlapping is as follows: when a non-overlapping pattern is found, the pattern searching continues in the position after the end end of the match. In the case of an  overlapping pattern, the searching process continues one position after the beginning of the match:
 

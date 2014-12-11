@@ -32,7 +32,7 @@ server.echo(None)
 
 The previous code should print: ```['okay', 'Deep Blue (0.9.5) says hi to a Stranger']```
 
-Some commands, for example [list_experiments](http://deepblue.mpi-inf.mpg.de/api.html#api-list_experiments), have some optional parameters. For these, it is possible to enter *None* (or the *null* value in any other programming language) or an empty string (```""```).
+Some commands, for example [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments), have some optional parameters. For these, it is possible to enter *None* (or the *null* value in any other programming language) or an empty string (```""```).
 The last line of the previous code snippet can be rewritten as:
 ```python
 server.echo("")

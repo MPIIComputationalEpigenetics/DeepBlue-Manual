@@ -1,6 +1,6 @@
 ## Inserting Techniques
 
-The [add_technique](http://deepblue.mpi-inf.mpg.de/api.html#api-add_technique) requires ```name``` and ```description``` parameters:
+The [add_technique](http://deepblue.mpi-inf.mpg.de/api.php#api-add_technique) requires ```name``` and ```description``` parameters:
 
 
 ```python
