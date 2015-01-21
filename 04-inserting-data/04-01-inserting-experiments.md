@@ -21,8 +21,7 @@ The data must be in the [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1),
 ### BED Data Format
 
 When inserting an experiment in [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format, the  ```format``` parameter should describe the data content.
-The format contains the field names separated by commas (,) where each field must have a ```name``` and ```type```. An optional value, named ```default_value```, can be used to indicate the value of this column if some value is missing.
-The ```default_value```is also used in the [get_results](http://deepblue.mpi-inf.mpg.de/api.php#api-get_regions) when some column that the experiment does not contain is requested.
+The format contains the field names separated by commas (,) where each field must have a ```name``` and ```type```.
 Remember that the [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format uses tabs as field separators.
 
 Let us take at the following BED file:
@@ -35,7 +34,7 @@ chr1	400	600	0.2
 
 An acceptable format is:
 ```python
-format_example_one = "Chromosome:String,Start:Integer,End:Integer,Value:Double:0.0"
+format_example_one = "Chromosome:String,Start:Integer,End:Integer,Value:Double"
 ```
 The ```format_example_one``` defines a [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format with four fields.
 We will ignore the content of the field ```Value``` when it is "0.0".
@@ -54,26 +53,25 @@ To help to resolve the problem of column name ambiguity, DeepBlue has the ```Col
 DeepBlue provides the ```Column Types``` data type for predefining column names and their respective types.
 They should be used to insert an experiment or annotation.
 Using ```Column Types``` is simple, requiring only the ```Column Type``` name.
-For example, we can rewrite the format defined by ```"Chromosome:String,Start:Integer,End:Integer,Value:Double:0.0"``` as ```CHROMOSOMO,START,END,VALUE```.
+For example, we can rewrite the format defined by ```"Chromosome:String,Start:Integer,End:Integer,Value:Double"``` as ```CHROMOSOMO,START,END,VALUE```.
 
 ```Column Types``` must first be created before being used. Each ```Column Type``` contains the three pieces of information that were defined directly in the BED format field:
 
  * ```name``` is the unique identifier that will be used in the BED file descriptor.
  * ```type``` can be ```string```, ```integer```, ```double```, ```category```, or ```range```.
- * ```default_value``` is the default value for this the column.
 
 DeepBlue has the column *IGNORE* that must be used when the entire column content must be ignored.
 
 Three commands are available to define a ```column_type``:
  * [create_column_type_simple](http://deepblue.mpi-inf.mpg.de/api.php#api-create_column_type_simple) — to create a ```column_type``` with simple types: ```string```, ```integer```, and ```double```.
  ```python
- server.create_column_type_simple("NAME", "The Name!", "-", "string", user_key)
- server.create_column_type_simple("VALUE", "The Value!", "0.0", "double", user_key)
- server.create_column_type_simple("POSITION", "The Position!", "0", "integer", user_key)
+ server.create_column_type_simple("NAME", "The Name!", "string", user_key)
+ server.create_column_type_simple("VALUE", "The Value!", "double", user_key)
+ server.create_column_type_simple("POSITION", "The Position!", "integer", user_key)
  ```
  * [create_column_type_category](http://deepblue.mpi-inf.mpg.de/api.php#api-create_column_type_category) — to create a ```column_type``` that accepts a predefined set of values
 ```python
- server.create_column_type_simple("STRAND", "Strand!", ".", ["+","-"], user_key)
+ server.create_column_type_simple("STRAND", "Strand!", ["+","-"], user_key)
  ```
  * [create_column_type_range](http://deepblue.mpi-inf.mpg.de/api.php#api-create_column_type_range) — to create a ```column_type`` that accepts a value that lies within a given range (value range is inclusive)
  ```python
@@ -92,7 +90,7 @@ for column in columns:
 
 The following file format serve as an example:
 ```
-milliDel:Integer:0,milliIns:Integer:0,chromosome:String,start:Integer:0,end:Integer:0,strand:String,repName:String,repClass:String```
+milliDel:Integer,milliIns:Integer,chromosome:String,start:Integer,end:Integer,strand:String,repName:String,repClass:String```
 
 This can be rewritten using ```column_types``` as:
 
