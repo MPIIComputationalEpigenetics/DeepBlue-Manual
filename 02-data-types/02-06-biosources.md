@@ -2,7 +2,7 @@
 
 The *BioSources* controlled vocabulary contains different types of biological sources: cell lines, cell types, lineage, tissues, organs, and others.
 A BioSource contains a name, description, and additional metadata.
-DeepBlue currently imports BioSources from the [ENCODE controlled vocabulary](ftp://hgdownload.cse.ucsc.edu/apache/cgi-bin/encode/cv.ra), and from three ontologies: [Cell Type](http://www.ontobee.org/browser/index.php?o=CL), [Experimental Factor Ontology](http://www.ontobee.org/browser/index.php?o=EFO), and [Uber Anatomy Ontology](http://www.ontobee.org/browser/index.php?o=UBERON).
+DeepBlue currently imports BioSources from three ontologies: [Cell Type](http://www.ontobee.org/browser/index.php?o=CL), [Experimental Factor Ontology](http://www.ontobee.org/browser/index.php?o=EFO), and [Uber Anatomy Ontology](http://www.ontobee.org/browser/index.php?o=UBERON).
 Each term in the BioSource controlled vocabulary has a name, description (if available), the address of a full description of the term, ontology name, namespace of the term, and the ontology comment about the term.
 
 The command [add_bio_source](http://deepblue.mpi-inf.mpg.de/api.php#api-add_bio_source) is used to insert a new BioSource. It is also possible to list all BioSources using the command [list_bio_sources](http://deepblue.mpi-inf.mpg.de/api.php#api-list_bio_sources) and to search all BioSources with a similar name through the command [list_similar_bio_sources](http://deepblue.mpi-inf.mpg.de/api.php#api-list_similar_bio_sources).
@@ -53,6 +53,7 @@ From a data organization perspective, **Samples are BioSources with metadata**.
 The metadata may contain any kind of information about the source such as the organism, laboratory, age, karyotype, cell lineage, strain, date, donor sex, or donor ethnicity.
 The metadata fields are very flexible, and it is recommended that all sample information be included here.
 We will try to include as much metadata as possible during a sample's import process.
+DeepBlue imports samples from ENCODE, BLUEPRINT and others future projects. Look in the field *source* in the sample *extra_metadata* for obtaining the *Sample* original source.
 
 The sample metadata fields should be included before using the command [add_sample_field](http://deepblue.mpi-inf.mpg.de/api.php#api-add_sample_field).
 The necessary information to create a new field is the field name, the type (string or numeral), description, and the *user_key*.
