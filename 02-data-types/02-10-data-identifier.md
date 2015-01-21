@@ -24,6 +24,7 @@ The [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command is to inspec
 server.info("e1", user_key)
 ```
 
+The info command returns a list of maps, where each map contains the information of an id.
 
 We can use the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command to view the samples' content:
 

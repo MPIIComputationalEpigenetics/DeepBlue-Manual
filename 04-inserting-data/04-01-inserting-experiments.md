@@ -111,5 +111,5 @@ In the following example, we [search](http://deepblue.mpi-inf.mpg.de/api.php#api
 (s, experiments) = server.search("\"methylation\" \"blood\"", "experiments", user_key)
 for experiment in experiments:
 	(s, e_info) = server.info(experiment[0], user_key)
-	print e_info["name"] + " : " + e_info["format"]
+	print e_info[0]["name"] + " : " + e_info[0]["format"]
 ```
