@@ -1,6 +1,6 @@
 ### Example: Workflow
 
-![DeepBlue Epigenomic Data Server](http://deepblue.mpi-inf.mpg.de/imgs/workflow.png)
+![DeepBlue Epigenomic Data Server](http://deepblue.mpi-inf.mpg.de/img/workflow.png)
 
 ```python
 (status, experiment) = server.select_regions("wgEncodeHaibMethylRrbsLncapAndroDukeSitesRep2", "hg19", None, None, None, None, "chr1", None, None, user_key)
