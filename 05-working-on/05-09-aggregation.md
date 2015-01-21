@@ -21,7 +21,7 @@ In the following example, we aggregate the retrieved data into tiling regions of
 In the, end we remove the aggregated regions that do not contain any region:
 
 ```python
-(status, blood_related) = server.get_bio_source_related("blood", user_key)
+(status, blood_related) = server.get_biosource_related("blood", user_key)
 blood_related_names = [x[1] for x in blood_related]
 
 (status, blood_samples) = server.list_samples(blood_related_names, {"karyotype":"cancer"}, user_key)

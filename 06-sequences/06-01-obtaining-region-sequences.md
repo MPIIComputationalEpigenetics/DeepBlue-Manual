@@ -3,7 +3,7 @@
 Just use the metafield ```@SEQUENCE``` for obtaining the regions' sequences:
 
 ```python
-(status, blood_related) = server.get_bio_source_related("blood", user_key)
+(status, blood_related) = server.get_biosource_related("blood", user_key)
 blood_related_names = [x[1] for x in blood_related]
 
 (status, blood_samples) = server.list_samples(blood_related_names, {"karyotype":"cancer"}, user_key)

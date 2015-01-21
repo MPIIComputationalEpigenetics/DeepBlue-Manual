@@ -8,7 +8,7 @@ The format is the name of the fields that were given in the [add_experiment](htt
 *Example:* Retrieving all regions from chromosome 1, *blood* as biosource, *methylation* as epigenetic mark , and containing the key *karyotype* with the value *cancer* in the sample:
 
 ```python
-(status, blood_related) = server.get_bio_source_related("blood", user_key)
+(status, blood_related) = server.get_biosource_related("blood", user_key)
 blood_related_names = [x[1] for x in blood_related]
 
 (status, blood_samples) = server.list_samples(blood_related_names, {"karyotype":"cancer"}, user_key)
@@ -33,11 +33,11 @@ The following table shows all metafields in the regions experiment metadata:
 | @LENGTH          | Region length          |
 | @EPIGENETIC_MARK | Region epigenetic mark |
 | @PROJECT         | Region project name    |
-| @BIO_SOURCE      | Region biosource name  |
+| @BIOSOURCE       | Region biosource name  |
 | @SAMPLE_ID       | Region sample ID       |
 
 The next example works as the previous one, but now returning the experiment name, length and BioSource name:
 
 ```python
-(status, regions) = server.get_regions(query_id, "CHROMOSOME,START,END,@NAME,@LENGTH,@BIO_SOURCE", user_key)
+(status, regions) = server.get_regions(query_id, "CHROMOSOME,START,END,@NAME,@LENGTH,@BIOSOURCE", user_key)
 ```
