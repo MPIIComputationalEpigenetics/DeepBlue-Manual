@@ -15,6 +15,7 @@ It is possible to retrieve the aggregation result with the aggregation metafield
 | @AGG.SD             | Regions standard deviation |
 | @AGG.COUNT          | Regions count              |
 
+Please, remember that DeepBlue does not aggregate inter-region regions, only the regions that are fully overlapped by some `query_region_id`.
 
 In the following example, we aggregate the retrieved data into tiling regions of length 100000.
 In the, end we remove the aggregated regions that do not contain any region:
