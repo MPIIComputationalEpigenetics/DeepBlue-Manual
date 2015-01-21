@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Basics](01-basics/01-00-basics.md)
+   * [Features](01-basics/01-001-features.md)
    * [Accessing DeepBlue](01-basics/01-01-access.md)
    * [Creating User Account](01-basics/01-02-creating-user.md)
    * [User Key](01-basics/01-03-user-key.md)
