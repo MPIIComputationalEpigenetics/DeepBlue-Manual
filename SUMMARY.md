@@ -29,6 +29,7 @@
    * [Inserting Samples](04-inserting-data/04-06-inserting-samples.md)
    * [Inserting Projects](04-inserting-data/04-07-inserting-projects.md)
    * [Inserting Techniques](04-inserting-data/04-08-inserting-techniques.md)
+   * [Removing Data](04-inserting-data/04-09-removing.md)
 * [Working with the Data](05-working-on/05-00-working-with-the-data.md)
    * [Selecting Annotations](05-working-on/05-01-selecting-annotations.md)
    * [Selecting Experiments](05-working-on/05-02-selection-experiments.md)
