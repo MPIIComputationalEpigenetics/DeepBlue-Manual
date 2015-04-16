@@ -15,9 +15,8 @@ blood_related_names = [x[1] for x in blood_related]
 blood_samples_ids = [x[0] for x in blood_samples]
 
 (status, query_id) = server.select_regions(None, "hg19", "DNA Methylation", blood_samples_ids, None, None, "chr1", None, None, user_key)
-The result can be retrieved using [get_request_data](http://deepblue.mpi-inf.mpg.de/api.php#api-get_request_data).
-(status, request_id) = server.get_regions(query_id, "CHROMOSOME,START,END", user_key)
 
+(status, request_id) = server.get_regions(query_id, "CHROMOSOME,START,END", user_key)
 (status, regions) = server.get_request_data(request_id, user_key)
 
 print regions
