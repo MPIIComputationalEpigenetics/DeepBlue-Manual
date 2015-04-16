@@ -5,6 +5,7 @@ The [filter_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-filter_regions) 
 Example:
 ```python
 >>> (status, filtered) = server.filter_regions(query_id, "SCORE", ">","5", "integer", user_key)
->>> print server.count_regions(filtered, user_key)
+>>> (status, request_id) = server.count_regions(filtered, user_key)
+>>> print server.get_request_data(request_id, user_key
 ['okay', 1007799]
 ```

@@ -36,5 +36,7 @@ blood_samples_ids = [x[0] for x in blood_samples]
 
 (status, aggr_filter) = server.filter_regions(aggr_id, "@AGG.COUNT", ">", "0", "integer", user_key)
 
-(status, regions) =  server.get_regions(aggr_filter, "CHROMOSOME,START,END,@AGG.MIN,@AGG.MAX,@AGG.MEDIAN,@AGG.MEAN,@AGG.SD,@AGG.COUNT", user_key)
+(status, request_id) =  server.get_regions(aggr_filter, "CHROMOSOME,START,END,@AGG.MIN,@AGG.MAX,@AGG.MEDIAN,@AGG.MEAN,@AGG.SD,@AGG.COUNT", user_key)
+
+(status, regions) = server.get_request_data(request_id, user_key)
 ```
