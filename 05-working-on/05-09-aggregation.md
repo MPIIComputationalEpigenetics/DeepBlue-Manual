@@ -28,7 +28,7 @@ blood_related_names = [x[1] for x in blood_related]
 
 blood_samples_ids = [x[0] for x in blood_samples]
 
-(status, data_id) = server.select_regions(None, "hg19", "Methylation", blood_samples_ids, None, None, "chr1", None, None, user_key)
+(status, data_id) = server.select_regions(None, "hg19", "DNA Methylation", blood_samples_ids, None, None, "chr1", None, None, user_key)
 
 (s, regions_id) = server.tiling_regions(100000, "hg19", "chr1", user_key)
 
