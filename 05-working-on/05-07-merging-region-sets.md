@@ -8,5 +8,6 @@ It is possible to merge regions from two different operations results using the 
 
 (s, hemoglobin) = server.merge_queries(hemoglobin_alpha, hemoglobin_beta, user_key)
 
-(s, regions) = server.get_regions(hemoglobin, "CHROMOSOME,START,END,ENSEMBLE_ID,VALUE,STRAND", user_key)
+(s, request_id) = server.get_regions(hemoglobin, "CHROMOSOME,START,END,ENSEMBLE_ID,VALUE,STRAND", user_key)
+(s, regions) = server.get_request_data(request_id, user_key)
 ```

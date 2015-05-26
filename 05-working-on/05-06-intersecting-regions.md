@@ -7,6 +7,7 @@ The command has three parameters: the ID of the regions to be filtered, and the 
 ```python
 >>> (status, cpg_islands) = server.select_annotations("CpG Islands", "hg19", None, None, None, user_key)
 >>> (status, overlaps) = server.intersection(filtered, cpg_islands, user_key)
->>> print server.count_regions(overlaps, user_key)
+>>> (status, request_id) = server.count_regions(overlaps, user_key)
+>>> print server.get_request_data(request_id, user_key)
 ['okay', 611800]
 ```
