@@ -13,7 +13,7 @@ DeepBlue has the following commands for working with the data:
 * [get_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-get_regions) — request the query regions
 * [aggregate](http://deepblue.mpi-inf.mpg.de/api.php#api-aggregate) — get the regions for the given query in the requested BED format
 * [get_request_data](http://deepblue.mpi-inf.mpg.de/api.php#api-get_request_data) - get the requested data
-* [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) - get information about an entity
+* [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) - get information about an entity or the data request
 
 The usual workflow is to select the data with [select_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) and [select_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-select_annotations).
 Next, filter the data with [filter_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-filter_regions) or [intersection](http://deepblue.mpi-inf.mpg.de/api.php#api-intersection).
