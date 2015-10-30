@@ -94,7 +94,10 @@ server.list_samples("T_cells_CD4+", {}, user_key)
 ```
 This command returns:
 ```python
-['okay', ['s342', {'lineage': 'mesoderm', 'karyotype': 'unknown', 'description': 'Parent cell line for T cells CD4+.', 'biosource_name': 'T_cells_CD4+', 'lab': 'Crawford', 'sex': 'B', 'user': 'Populator', 'tier': '3', '_id': 's342', 'organism': 'human'}]]
+['okay', ['s342', {'lineage': 'mesoderm', 'karyotype': 'unknown',
+                    'description': 'Parent cell line for T cells CD4+.',
+                    'biosource_name': 'T_cells_CD4+', 'lab': 'Crawford', 'sex': 'B',
+                    'user': 'Populator', 'tier': '3', '_id': 's342', 'organism': 'human'}]]
 ```
 
 The [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) command may be used to retrieve samples based on their metadata. For instance, to retrieve all samples that have "tier 3" in their metadata:
