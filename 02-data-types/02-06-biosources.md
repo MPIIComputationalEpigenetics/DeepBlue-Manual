@@ -26,45 +26,11 @@ Use the [get_biosource_children](http://deepblue.mpi-inf.mpg.de/api.php#api-get_
 ```python
 (s, children) = server.get_biosource_children("blood", user_key)
 ```
-The ```children``` content will be:
-```python
-['okay', ['blood', 'GM12878', 'K562', 'K562b', 'BC_Leukocyte_UHN00204', 'CD20+',
-          'CD20+_RO01778', 'CD20+_RO01794', 'CD34+_Mobilized', 'CD4+_Naive_Wb11970640',
-          'CD4+_Naive_Wb78495824', 'CLL', 'CMK', 'Dnd41', 'GM10248', 'GM10266',
-          'GM13976', 'GM13977', 'GM20000', 'H0287', 'HL-60', 'hMNC-PB',
-          'hMNC-PB_0082430.9', 'hMNC-PB_0022330.9', 'hMNC-CB', 'hMNC-CB_9111701.6',
-          'hMNC-CB_8072802.6', 'Jurkat', 'Loucy', 'Lymphoblastoid_cell_line',
-          'GM18507', 'GM12801', 'GM18505', 'GM12873', 'GM12872', 'GM19193', 'GM18526',
-          'GM19099', 'GM19238', 'GM19239', 'GM08714', 'GM06990', 'GM12878-XiMat',
-          'GM19240', 'GM15510', 'GM10847', 'GM12875', 'GM12874', 'GM12871', 'GM12870',
-          'GM12813', 'GM12812', 'GM12892', 'GM12891', 'GM18951', 'GM12867', 'GM12868',
-          'GM12869', 'GM12866', 'GM12864', 'GM12865', 'NB4', 'PBDE', 'PBMC', 'Raji',
-          'T_cells_CD4+', 'Adult_CD4_Th0', 'Adult_CD4_Th1', 'Cord_CD4_Th1',
-          'Cord_CD4_Th0', 'Adult_CD4_naive', 'Cord_CD4_naive', 'Th1', 'Th1_Wb33676984',
-          'Th1_Wb54553204', 'Th17', 'Th2', 'Th2_Wb33676984', 'Th2_Wb54553204',
-          'Treg_Wb78495824', 'Treg_Wb83319432', '416B', 'A20', 'B-cell_(CD19+)',
-          'B-cell_(CD43-)', 'BMDM', 'CH12', 'EPC_(CD117+_CD71-_TER119-)', 'Erythrobl',
-          'G1E', 'G1E-ER4', 'G1E-ER4', 'L1210', 'MEP', 'Megakaryo', 'MEL', 'mG/ER',
-          'NIH-3T3', 'THelper-Activated', 'T-Naive', 'TReg-Activated', 'TReg',
-          'umbilical cord blood', 'arterial blood', 'venous blood', 'capillary blood']]
-```
 
 The command [get_biosource_related](http://deepblue.mpi-inf.mpg.de/api.php#api-get_biosource_related) returns all BioSources under the given BioSource and their synonyms:
 
 ```python
 (s, related) = server.get_biosource_related("blood", user_key)
-```
-
-The ```related``` content is: (partial output)
-```python
-['okay', [['bs2', 'blood'], ['bs2', 'portion of blood'], ['bs2', 'vertebrate blood'],
-          ['bs1', 'GM12878'], ['bs4', 'K562'], ['bs5', 'K562b'],
-          ['bs65', 'BC_Leukocyte_UHN00204'], ['bs108', 'CD20+'],
-          ['bs109', 'CD20+_RO01778'], ['bs110', 'CD20+_RO01794'],
-          ['bs111', 'CD34+_Mobilized'], ['bs112', 'CD4+_Naive_Wb11970640'],
-          ['bs113', 'CD4+_Naive_Wb78495824'], ['bs116', 'CLL'], ['bs124', 'CMK'],
-          ['bs131', 'Dnd41'], ['bs151', 'GM10248'], ['bs152', 'GM10266'],
-          ['bs173', 'GM13976'], ['bs174', 'GM13977'], ['bs184', 'GM20000']]
 ```
 
 Some BioSources may have duplicated IDs, for example, ```blood```and ```portion of blood``` have the ID ```bs2```.

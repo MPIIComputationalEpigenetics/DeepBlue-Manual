@@ -30,13 +30,13 @@ server = xmlrpclib.Server(url, allow_none=True)
 
 # Obtain the regions that starts 2500 bases pair before the regions start and
 # have 2000 base pairs.
-# The 4th argument inform that DeepBlue must consider the region strand (column STRAND)
+# The 4th argument inform that DeepBlue must consider the region's column STRAND
 # to calculate the new region
 (s, before_flank_id) = server.flank(q_genes, -2500, 2000, True, user_key)
 
 # Obtain the regions that starts 1500 bases pair after the regions end and
 # have 500 base pairs.
-# The 4th argument inform that DeepBlue must consider the region strand (column STRAND)
+# The 4th argument inform that DeepBlue must consider the region's column STRAND
 # to calculate the new region
 (s, after_flank_id) = server.flank(q_genes, 1500, 500, True, user_key)
 
