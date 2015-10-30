@@ -20,7 +20,7 @@ All parameters, with the exception of *user_key*, are optional. Setting a parame
 
 ```python
 import xmlrpclib
-user_key = "userkey123"
+user_key = "anonymous_key"
 url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
@@ -32,10 +32,11 @@ To list all Experiments from the human genome assembly *hg19* with the epigeneti
 
 ```python
 import xmlrpclib
-user_key = "userkey123"
+user_key = "anonymous_key"
 url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
 
-h3k27me3_encode = server.list_experiments("hg19", "h3k27me3", None, None, None, None, "ENCODE", user_key)
+h3k27me3_encode = server.list_experiments("hg19", "h3k27me3", None, None, None,
+                                          None, "ENCODE", user_key)
 ```
