@@ -55,6 +55,6 @@ The [upload_chromosome](http://deepblue.mpi-inf.mpg.de/api.php#api-upload_chromo
 data = "ACTGACTGCG" * 100000
 print server.upload_chromosome("hgX", "chr1", data, user_key)
 ```
-The [Working with Sequences](../06-sequences/06-01-obtaining-region-sequences) section discusses how to access and use the genomic sequences.
+The [Working with Sequences](../06-sequences/06-01-obtaining-region-sequences.md) section discusses how to access and use the genomic sequences.
 
 A list of all possible commands that can be applied within the genomes controlled vocabulary is available at [DeepBlue API - Inserting and listing Genomes](http://deepblue.mpi-inf.mpg.de/api.php#api-genomes).
