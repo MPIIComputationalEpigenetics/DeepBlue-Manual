@@ -3,7 +3,7 @@
 The [DeepBlue API](http://deepblue.mpi-inf.mpg.de/api.php) provides a set of Listing methods.
 Each [data type](../02-data-types/02-00-data-types.md) has ```list``` and ```list_similar``` operations.
 All listing operations return a set of IDs and names, with the exception of the samples, which return a set of IDs and a key-value table.
-It is possible to read the [data identifier](02-10-data-identifier.md) using the[info](http://deepblue.mpi-inf.mpg.de/api.php#api-info)  command.
+It is possible to read the [data identifier](../02-data-types/02-10-data-identifier.md) using the[info](http://deepblue.mpi-inf.mpg.de/api.php#api-info)  command.
 
 The [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) command lists experiments by genome, experiment type, epigenetic_mark, biosource, sample, technique, project. It accepts any combination of the parameters, allowing users to filter the selection.
 Hence, without any filter at all, [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) returns all the experiments in DeepBlue.
