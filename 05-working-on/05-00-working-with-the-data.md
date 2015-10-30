@@ -15,7 +15,7 @@ DeepBlue has the following commands for working with the data:
 * [get_request_data](http://deepblue.mpi-inf.mpg.de/api.php#api-get_request_data) - get the requested data
 * [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) - get information about an entity or the data request
 
-The usual workflow is to select the data with [select_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) and [select_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-select_annotations).
+The usual workflow is: select the data with [select_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-select_regions) and [select_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-select_annotations).
 Next, filter the data with [filter_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-filter_regions) or [intersection](http://deepblue.mpi-inf.mpg.de/api.php#api-intersection).
 If necessary, select more data and merge them using the [merge_queries](http://deepblue.mpi-inf.mpg.de/api.php#api-merge_queries).
 To view the results; it is possible to request the experiments containing selected data with the [get_experiments_by_query](http://deepblue.mpi-inf.mpg.de/api.php#api-get_experiments_by_query), [count_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-count_regions), or [get_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-get_regions) command (in the BED format), or in a data summary using [aggregate](http://deepblue.mpi-inf.mpg.de/api.php#api-aggregate). The status of the request can be viewed using [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) and the data retrieved using [get_request_data](http://deepblue.mpi-inf.mpg.de/api.php#api-get_request_data).
