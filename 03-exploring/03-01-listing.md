@@ -5,7 +5,7 @@ Each [data type](../02-data-types/02-00-data-types.md) has ```list``` and ```lis
 All listing operations return a set of IDs and names, with the exception of the samples, which return a set of IDs and a key-value table.
 It is possible to read the [data identifier](03-03-data-identifier.md) using the[info](http://deepblue.mpi-inf.mpg.de/api.php#api-info)  command.
 
-The [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) command lists experiments by genome, epigenetic_mark, sample, technique, project. It accepts any combination of the parameters, allowing users to filter the selection.
+The [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) command lists experiments by genome, experiment type, epigenetic_mark, biosource, sample, technique, project. It accepts any combination of the parameters, allowing users to filter the selection.
 Hence, without any filter at all, [list_experiments](http://deepblue.mpi-inf.mpg.de/api.php#api-list_experiments) returns all the experiments in DeepBlue.
 
 The [list_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-list_annotations) command requires the genome name parameter because the same annotation name can be used for different genomes, for example, the genes location annotations.

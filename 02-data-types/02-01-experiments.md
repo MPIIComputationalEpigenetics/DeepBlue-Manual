@@ -25,7 +25,7 @@ url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
 
-all_experiments = server.list_experiments("hg19", "", "", "", "", user_key)
+all_experiments = server.list_experiments("hg19", "", "", "", "", "", "", user_key)
 ```
 
 To list all Experiments from the human genome assembly *hg19* with the epigenetic mark *H3K27me3* from the *ENCODE* project:
@@ -37,5 +37,5 @@ url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
 
-h3k27me3_encode = server.list_experiments("hg19", "h3k27me3", None, None, "ENCODE", user_key)
+h3k27me3_encode = server.list_experiments("hg19", "h3k27me3", None, None, None, None, "ENCODE", user_key)
 ```
