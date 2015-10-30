@@ -3,7 +3,7 @@ All access to DeepBlue is made through the XML-RPC protocol to the server locate
 
 Note that while the examples in this manual focus on the *Python 2.7* programming language, DeepBlue commands should work in nearly all programming languages. For XML-RPC-based  access to DeepBlue from other languages, please check the following resources:
  * Java - [Apache XML-RPC](http://ws.apache.org/xmlrpc/)
- * R (bioconductor) - [XMLRPC](http://bioconductor.org/packages/devel/extra/html/XMLRPC.html)
+ * R - We developed an optimized XML-RPC library for accessing DeepBlue from R: [DeepBlue-R](https://raw.githubusercontent.com/MPIIComputationalEpigenetics/DeepBlue-R/master/py/deepblue.r)
  * PHP - [XML-RPC](http://php.net/manual/en/book.xmlrpc.php)
  * Other programming languages [google it](https://www.google.com/search?q=xml+rpc+%3Cyour%20programming%20language%3E)
 
@@ -19,7 +19,7 @@ url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
 ```
 
-The *user_key* stores a user's credentials for accessing the server. The section [Creating User](04-creating-user.md) describes how to obtain a *user_key*.
+The *user_key* stores a user's credentials for accessing the server. The section [Creating User](01-02-creating-user.md) describes how to obtain a *user_key*.
 In the final line of the example above, we create an object for accessing the server. Be sure to use *UTF-8* encoding, and *allow_none=True*.
 
 Execute the following code:

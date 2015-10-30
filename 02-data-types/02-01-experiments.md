@@ -7,7 +7,7 @@ One experiment has the following metadata:
   * *Name* — experiment name.
   * *Genome* — genome assembly used by the experiment. More details in the [Genomes](02-04-genomes.md) section.
   * *Epigenetic mark* — epigenetic mark of the experiment, for example: methylation or some histone modification. More details in the [Epigenetic Marks](02-05-epigenetic-marks.md) section.
-  * *Sample* — identification of the sample used in the experiment. More details in the [BioSources and Samples](02-06-bio-sources.md) section.
+  * *Sample* — identification of the sample used in the experiment. More details in the [BioSources and Samples](02-06-biosources.md) section.
   * *Technique* — technique used by the experiment, for example, ChipSeq or DNaseSeq. More details in the [Technique](02-08-techniques.md) section
   * *Project* — project associated with the experiment, for example, ENCODE or Blueprint. More details in the [Project](02-09-projects.md) section.
   * *Description* — description of the experiment.
