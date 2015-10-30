@@ -10,7 +10,8 @@ import gzip
 f = gzip.open("wgEncodeHaibMethyl450Ag04449SitesRep1.bed.gz", 'rb')
 data = f.read()
 
-# Even though DeepBlue accepts unsorted BED files, sorting them will make the insertion process *much faster*
+# Even though DeepBlue accepts unsorted BED files,
+# sorting them will make the insertion process much faster
 data_split = data.split("\n")
 data_split = [x for x in data_splited if x]  # Remove empty lines
 data_split.sort()
@@ -33,7 +34,10 @@ extra_metadata = {"dateSubmitted":"2011-09-29", "replicate":"1" :"size":"8.7M"}
 format = "NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB"
 
 # Inserting
-(status, _id) = server.add_experiment(name, genome, epigenetic_mark, sample, technique, project, description, sorted_data, format, extra_metadata, user_key)
+(status, _id) = server.add_experiment(name, genome, epigenetic_mark,
+                                      sample, technique, project,
+                                      description, sorted_data, format,
+                                      extra_metadata, user_key)
 
 # Checking result
 if (status == "okay"):

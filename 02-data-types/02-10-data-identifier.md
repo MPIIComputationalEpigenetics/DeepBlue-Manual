@@ -37,13 +37,3 @@ samples_id = [x[0] for x in samples] # get samples ID
 for _id in samples_id[:20] : # the first 20 samples
  print  server.info(_id, user_key)
 ```
-
-Partial output:
-
-```
-['okay', {'lineage': 'mesoderm', '_id': 's1',
-           'description': 'B-lymphocyte, lymphoblastoid, International HapMap Project -
-              CEPH/Utah - European Caucasion, Epstein-Barr Virus',
-            'biosource_name': 'GM12878', 'organism': 'human', 'sex': 'F',
-            'user': 'Populator', 'tier': '1', 'karyotype': 'normal', 'type': 'sample'}]
-```

@@ -8,9 +8,4 @@ In a [previous section](05-02-selection-experiments.md), we selected all experim
 >>> for experiment in experiments[:5]:
 >>>   (status, info) = server.info(experiment[0], user_key)
 >>>   print info["name"], info["format"]
-wgEncodeHaibMethylRrbsNb4UwSitesRep1 CHROMOSOME,START,END,NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES
-wgEncodeHaibMethylRrbsJurkatUwSitesRep1 CHROMOSOME,START,END,NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES
-wgEncodeHaibMethylRrbsK562HaibSitesRep2 CHROMOSOME,START,END,NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES
-wgEncodeHaibMethylRrbsCmkUwSitesRep1 CHROMOSOME,START,END,NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES
-wgEncodeHaibMethylRrbsNb4UwSitesRep2 CHROMOSOME,START,END,NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES
 ```

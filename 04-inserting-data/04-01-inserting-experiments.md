@@ -75,7 +75,8 @@ Three commands are available to define a ```column_type``:
  ```
  * [create_column_type_range](http://deepblue.mpi-inf.mpg.de/api.php#api-create_column_type_range) — to create a ```column_type`` that accepts a value that lies within a given range (value range is inclusive)
  ```python
- server.create_column_type_range("NORMALIZED_SCORE", "Normalized Score", -1.0, 1.0, user_key)
+ server.create_column_type_range("NORMALIZED_SCORE", "Normalized Score",
+                                 -1.0, 1.0, user_key)
  ```
 
 For consistency, please always use capital letters for the ```Column Type``` name.
@@ -90,7 +91,8 @@ for column in columns:
 
 The following file format serve as an example:
 ```
-milliDel:Integer,milliIns:Integer,chromosome:String,start:Integer,end:Integer,strand:String,repName:String,repClass:String```
+milliDel:Integer,milliIns:Integer,chromosome:String,
+start:Integer,end:Integer,strand:String,repName:String,repClass:String```
 
 This can be rewritten using ```column_types``` as:
 
@@ -101,7 +103,8 @@ MILLI_DEL,MILLI_INS,CHROMOSOME,START,END,STRAND,REP_NAME,REP_CLASS
 The standard [BED format](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) has the following specification in DeepBlue:
 
 ```
-'NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,BLOCK_COUNT,BLOCK_SIZES,BLOCK_STARTS'
+'NAME,SCORE,STRAND,THICK_START,THICK_END,ITEM_RGB,
+BLOCK_COUNT,BLOCK_SIZES,BLOCK_STARTS'
 ```
 
 It is possible to inspect the experiment format using the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command.

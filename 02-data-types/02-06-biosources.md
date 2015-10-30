@@ -39,14 +39,14 @@ The ```children``` content will be:
           'GM19240', 'GM15510', 'GM10847', 'GM12875', 'GM12874', 'GM12871', 'GM12870',
           'GM12813', 'GM12812', 'GM12892', 'GM12891', 'GM18951', 'GM12867', 'GM12868',
           'GM12869', 'GM12866', 'GM12864', 'GM12865', 'NB4', 'PBDE', 'PBMC', 'Raji',
-          'T_cells_CD4+', 'Adult_CD4_Th0', 'Adult_CD4_Th1', 'Cord_CD4_Th1', 'Cord_CD4_Th0',
-          'Adult_CD4_naive', 'Cord_CD4_naive', 'Th1', 'Th1_Wb33676984', 'Th1_Wb54553204',
-          'Th17', 'Th2', 'Th2_Wb33676984', 'Th2_Wb54553204', 'Treg_Wb78495824',
-          'Treg_Wb83319432', '416B', 'A20', 'B-cell_(CD19+)', 'B-cell_(CD43-)', 'BMDM',
-          'CH12', 'EPC_(CD117+_CD71-_TER119-)', 'Erythrobl', 'G1E', 'G1E-ER4', 'G1E-ER4',
-          'L1210', 'MEP', 'Megakaryo', 'MEL', 'mG/ER', 'NIH-3T3', 'THelper-Activated',
-          'T-Naive', 'TReg-Activated', 'TReg', 'umbilical cord blood', 'arterial blood',
-          'venous blood', 'capillary blood']]
+          'T_cells_CD4+', 'Adult_CD4_Th0', 'Adult_CD4_Th1', 'Cord_CD4_Th1',
+          'Cord_CD4_Th0', 'Adult_CD4_naive', 'Cord_CD4_naive', 'Th1', 'Th1_Wb33676984',
+          'Th1_Wb54553204', 'Th17', 'Th2', 'Th2_Wb33676984', 'Th2_Wb54553204',
+          'Treg_Wb78495824', 'Treg_Wb83319432', '416B', 'A20', 'B-cell_(CD19+)',
+          'B-cell_(CD43-)', 'BMDM', 'CH12', 'EPC_(CD117+_CD71-_TER119-)', 'Erythrobl',
+          'G1E', 'G1E-ER4', 'G1E-ER4', 'L1210', 'MEP', 'Megakaryo', 'MEL', 'mG/ER',
+          'NIH-3T3', 'THelper-Activated', 'T-Naive', 'TReg-Activated', 'TReg',
+          'umbilical cord blood', 'arterial blood', 'venous blood', 'capillary blood']]
 ```
 
 The command [get_biosource_related](http://deepblue.mpi-inf.mpg.de/api.php#api-get_biosource_related) returns all BioSources under the given BioSource and their synonyms:
@@ -97,7 +97,8 @@ This command returns:
 ['okay', ['s342', {'lineage': 'mesoderm', 'karyotype': 'unknown',
                     'description': 'Parent cell line for T cells CD4+.',
                     'biosource_name': 'T_cells_CD4+', 'lab': 'Crawford', 'sex': 'B',
-                    'user': 'Populator', 'tier': '3', '_id': 's342', 'organism': 'human'}]]
+                    'user': 'Populator', 'tier': '3', '_id': 's342',
+                    'organism': 'human'}]]
 ```
 
 The [list_samples](http://deepblue.mpi-inf.mpg.de/api.php#api-list_samples) command may be used to retrieve samples based on their metadata. For instance, to retrieve all samples that have "tier 3" in their metadata:

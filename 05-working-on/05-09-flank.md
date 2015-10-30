@@ -24,14 +24,20 @@ user_key = "anonymous_key"
 server = xmlrpclib.Server(url, allow_none=True)
 
 # Select the RP11-34P13 gene locations from gencode v23
-(status, q_genes) = server.select_genes(["RNU6-1100P", "CICP7", "MRPL20", "ANKRD65", "HES2", "ACOT7", "HES3", "ICMT"], "gencode v19", user_key)
+(status, q_genes) = server.select_genes(["RNU6-1100P", "CICP7", "MRPL20", "ANKRD65",
+                                         "HES2", "ACOT7", "HES3", "ICMT"],
+                                         "gencode v19", user_key)
 
-# Obtain the regions that starts 2500 bases pair before the regions start and have 2000 base pairs.
-# The 4th argument inform that DeepBlue must consider the region strand (column STRAND) to calculate the new region
+# Obtain the regions that starts 2500 bases pair before the regions start and
+# have 2000 base pairs.
+# The 4th argument inform that DeepBlue must consider the region strand (column STRAND)
+# to calculate the new region
 (s, before_flank_id) = server.flank(q_genes, -2500, 2000, True, user_key)
 
-# Obtain the regions that starts 1500 bases pair after the regions end and have 500 base pairs.
-# The 4th argument inform that DeepBlue must consider the region strand (column STRAND) to calculate the new region
+# Obtain the regions that starts 1500 bases pair after the regions end and
+# have 500 base pairs.
+# The 4th argument inform that DeepBlue must consider the region strand (column STRAND)
+# to calculate the new region
 (s, after_flank_id) = server.flank(q_genes, 1500, 500, True, user_key)
 
 # Merge both flanking regions set and genes set
@@ -39,7 +45,9 @@ server = xmlrpclib.Server(url, allow_none=True)
 (s, all_merge_id) = server.merge_queries(q_genes, flank_merge_id, user_key)
 
 # Request the regions
-(status, request_id) = server.get_regions(all_merge_id, "CHROMOSOME,START,END,STRAND,@LENGTH", user_key)
+(status, request_id) = server.get_regions(all_merge_id,
+                                          "CHROMOSOME,START,END,STRAND,@LENGTH",
+                                          user_key)
 
 # Wait for the server processing
 (status, info) = server.info(request_id, user_key)

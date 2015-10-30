@@ -15,9 +15,7 @@ print server.list_experiments("hg19", "peaks", None, None, samples_id,
 The result should look like: (partial output)
 
 ```python
-['okay', [['e48272', 'ENCFF001COV'], ['e48575', 'ENCFF001COX'], ['e48680', 'ENCFF001WEM'],
-          ['e48791', 'ENCFF001WEK'], ['e48806', 'ENCFF000AEO'], ['e48811', 'ENCFF001SQC'],
-          ['e44512', 'ENCFF001UED'], ['e44511', 'ENCFF001UDK'], ['e44509', 'ENCFF000OYA'],
-          ['e44472', 'ENCFF000PCI'], ['e44465', 'ENCFF000PBD'], ['e44410', 'ENCFF001UEL'],
-          ['e44396', 'ENCFF000PBS'], ['e44395', 'ENCFF001UER'], ['e44324', 'ENCFF000OZW']]]
+['okay', [['e48272', 'ENCFF001COV'], ['e48575', 'ENCFF001COX'],
+          ['e48791', 'ENCFF001WEK'], ['e48806', 'ENCFF000AEO'],
+          ['e44396', 'ENCFF000PBS'], ['e44395', 'ENCFF001UER']]]
 ```
