@@ -24,6 +24,3 @@ Uploading data to DeepBlue will make that data accessible to other users.
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)
 This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/)
-
-#### Book updates
-[![Build Status](https://www.gitbook.io/button/status/book/felipealbrecht/deepblue-epigenomic-data-server-manual)](https://www.gitbook.io/book/felipealbrecht/deepblue-epigenomic-data-server-manual/activity)
