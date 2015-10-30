@@ -5,12 +5,12 @@ DeepBlue has an operation for generating [flank regions](http://deepblue.mpi-inf
 The flanking regions are calculated as following:
 
 * If the ```start``` parameter is positive, the new regions will start after the end of the region.
-* If the ```start``` parameter is negative, the new regions will start before the start of the region plus the defined length.
+* If the ```start``` parameter is negative, the new regions will start before the start of the region plus the defined ```length```.
 
 If the ```use_strand``` parameter is true, then DeepBlue will use the content of the STRAND column for calculating the positions. It only changes the behavior of the regions that have negative strand (-).
 When the ```use_strand``` parameter is true and also the region has negative strand, the flanking regions are calculated as following:
 
-* If the ```start``` parameter is positive, the new regions will start before the start of the region plus the defined length.
+* If the ```start``` parameter is positive, the new regions will start before the start of the region plus the defined ```length```.
 * If the ```start``` parameter is negative, the new regions will start after the end of the region.
 
 Example:
