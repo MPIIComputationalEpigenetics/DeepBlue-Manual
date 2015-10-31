@@ -21,10 +21,9 @@ It is possible to count how many times a pattern occours in a region with the me
 (status, _id) = server.find_pattern("TATA", "hg19", False, user_key)
 (status, _id) = server.find_pattern("(TATA|CG)", "hg19", False, user_key)
 
-(status, ann) = server.select_annotations("CpG Islands", "hg19",
-                                          "chr1", 1, 500000, user_key)
+(status, ann) = server.tiling_regions(50000, "hg19", "chr1", user_key)
 
-fmt = "CHROMOSOME,START,END,@NAME:none,@LENGTH,@COUNT.NON-OVERLAP(TATA),\
+fmt = "CHROMOSOME,START,END,@NAME,@LENGTH,@COUNT.NON-OVERLAP(TATA),\
        @COUNT.NON-OVERLAP(CG),@COUNT.NON-OVERLAP((TATA|CG))"
 (status, regions_request_id) = server.get_regions(ann, fmt, user_key)
 
