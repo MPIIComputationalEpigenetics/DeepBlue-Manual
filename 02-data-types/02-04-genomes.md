@@ -10,7 +10,8 @@ genome_data = """chr1 1000000
 chr2 900000
 chr3 500000
 chrX 100000"""
-print server.add_genome("hgX", "Example of Genome for the Manual", genome_data, user_key)
+print server.add_genome("hgX", "Example of Genome for the Manual",
+                        genome_data, user_key)
 ```
 
 Please be aware that not all users have permission to insert a new genome into DeepBlue.
@@ -30,8 +31,10 @@ print server.list_annotations("hgX", user_key)
 
 Use the [select_annotations](http://deepblue.mpi-inf.mpg.de/api.php#api-select_annotations) and [get_regions](http://deepblue.mpi-inf.mpg.de/api.php#api-get_regions) commands to obtain the genome's annotation:
 ```python
-(s, chromosomes_annotation) = server.select_annotations("hgX", "hgX", None, None, None, user_key)
-(s, regions) = server.get_regions(chromosomes_annotation, "CHROMOSOME,START,END", user_key)
+(s, chromosomes_annotation) = server.select_annotations("hgX", "hgX", None,
+                                                        None, None, user_key)
+(s, regions) = server.get_regions(chromosomes_annotation, "CHROMOSOME,START,END",
+                                  user_key)
 print regions
 ```
 It will print:
@@ -55,6 +58,6 @@ The [upload_chromosome](http://deepblue.mpi-inf.mpg.de/api.php#api-upload_chromo
 data = "ACTGACTGCG" * 100000
 print server.upload_chromosome("hgX", "chr1", data, user_key)
 ```
-The [Working with Sequences](../06-sequences/06-01-obtaining-region-sequences) section discusses how to access and use the genomic sequences.
+The [Working with Sequences](../06-sequences/06-01-obtaining-region-sequences.md) section discusses how to access and use the genomic sequences.
 
 A list of all possible commands that can be applied within the genomes controlled vocabulary is available at [DeepBlue API - Inserting and listing Genomes](http://deepblue.mpi-inf.mpg.de/api.php#api-genomes).

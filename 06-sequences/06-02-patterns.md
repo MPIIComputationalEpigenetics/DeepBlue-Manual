@@ -14,14 +14,30 @@ print server.info(_id, user_key)
 
 It is possible to count how many times a pattern occours in a region with the metafields ``@COUNT.NON-OVERLAP(PATTERN)`` and ``@COUNT.NON-OVERLAP(PATTERN)``:
 
+**Important**: You need permission to include annotations for using the ```find_pattern```.
 
 ```python
 (status, _id) = server.find_pattern("CG", "hg19", False, user_key)
 (status, _id) = server.find_pattern("TATA", "hg19", False, user_key)
 (status, _id) = server.find_pattern("(TATA|CG)", "hg19", False, user_key)
 
-(status, ann) = server.select_annotations("CpG Islands", "hg19", "chr1", 1, 500000, user_key)
+(status, ann) = server.select_annotations("CpG Islands", "hg19",
+                                          "chr1", 1, 500000, user_key)
 
-fmt = "CHROMOSOME,START,END,@NAME:none,@LENGTH,@COUNT.NON-OVERLAP(TATA),@COUNT.NON-OVERLAP(CG),@COUNT.NON-OVERLAP((TATA|CG))"
-(status, regions) = server.get_regions(ann, fmt, user_key)
+fmt = "CHROMOSOME,START,END,@NAME:none,@LENGTH,@COUNT.NON-OVERLAP(TATA),\
+       @COUNT.NON-OVERLAP(CG),@COUNT.NON-OVERLAP((TATA|CG))"
+(status, regions_request_id) = server.get_regions(ann, fmt, user_key)
+
+# Wait for the server processing
+(status, info) = server.info(regions_request_id, user_key)
+request_status = info[0]["state"]
+while request_status != "done" and request_status != "failed":
+  time.sleep(1)
+  (status, info) = server.info(regions_request_id, user_key)
+  request_status = info[0]["state"]
+  print request_status
+
+
+(status, regions) = server.get_request_data(regions_request_id, user_key)
+print regions
 ```

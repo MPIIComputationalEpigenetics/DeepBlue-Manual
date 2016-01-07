@@ -11,7 +11,7 @@ The following source code demonstrates how to list all available annotations for
 
 ```python
 import xmlrpclib
-user_key = "userkey123"
+user_key = "anonymous_key"
 url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)

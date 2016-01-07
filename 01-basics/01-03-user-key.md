@@ -9,11 +9,11 @@ Before executing this code, change the variable ```user_key``` to your proper *u
 
 ```python
 import xmlrpclib
-user_key = "userkey123"
+user_key = "anonymous_key"
 url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
 server = xmlrpclib.Server(url, encoding='UTF-8', allow_none=True)
 print server.echo(user_key)
 ```
 
-The ```echo``` command should return: ```['okay', 'Deep Blue (0.9.5) says hi to Your Name']```.
+The ```echo``` command should return: ```['okay', 'Deep Blue (0.9.5) says hi to anonymous']```.
 Please verify your *user_key* if the command returns ```['okay', 'Deep Blue (0.9.5) says hi to a Stranger']```.

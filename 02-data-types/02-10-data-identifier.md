@@ -37,11 +37,3 @@ samples_id = [x[0] for x in samples] # get samples ID
 for _id in samples_id[:20] : # the first 20 samples
  print  server.info(_id, user_key)
 ```
-
-```
-['okay', {'lineage': 'mesoderm', '_id': 's1', 'description': 'B-lymphocyte, lymphoblastoid, International HapMap Project - CEPH/Utah - European Caucasion, Epstein-Barr Virus', 'biosource_name': 'GM12878', 'organism': 'human', 'sex': 'F', 'user': 'Populator', 'tier': '1', 'karyotype': 'normal', 'type': 'sample'}]
-['okay', {'lineage': 'mesoderm', '_id': 's2', 'description': 'leukemia, "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC', 'biosource_name': 'K562', 'organism': 'human', 'sex': 'F', 'user': 'Populator', 'tier': '1', 'karyotype': 'cancer', 'type': 'sample'}]
-['okay', {'lineage': 'mesoderm', '_id': 's3', 'description': 'leukemia (UCDavis alternate), "The continuous cell line K-562 was established by Lozzio and Lozzio from the pleural effusion of a 53-year-old female with chronic myelogenous leukemia in terminal blast crises." - ATCC', 'biosource_name': 'K562b', 'organism': 'human', 'sex': 'F', 'user': 'Populator', 'tier': '1', 'karyotype': 'cancer', 'type': 'sample'}]
-['okay', {'lineage': 'mesoderm', '_id': 's18', 'description': 'CD4+ cells isolated from human blood and enriched for naive populations', 'biosource_name': 'Adult_CD4_naive', 'organism': 'human', 'lab': 'Crawford', 'sex': 'B', 'user': 'Populator', 'tier': '3', 'karyotype': 'normal', 'type': 'sample'}]
-['okay', {'lineage': 'mesoderm', '_id': 's19', 'description': 'CD4+ cells isolated from human blood and enriched for Th0 populations', 'biosource_name': 'Adult_CD4_Th0', 'organism': 'human', 'lab': 'Crawford', 'sex': 'B', 'user': 'Populator', 'tier': '3', 'karyotype': 'normal', 'type': 'sample'}]
-```

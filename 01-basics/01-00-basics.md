@@ -4,7 +4,7 @@ The idea behind DeepBlue is to provide a central access hub for large collection
 
 The DeepBlue Epigenomic Data Server has three main parts:
  * The Data - *Experiments* and *Annotations*. Experiments data are the data from epigenomics experiments, e.g. the methylation data of a given sample, while the annotations data are auxiliary data, e.g. genes positions.
- * We organize the [genomes](../02-data-types/genomes.md), [projects](../02-data-types/projects.md), [epigenetic marks](../02-data-types/epigenetic-marks.md), [biosources](../02-data-types/bio-sources.md), and [techniques](../02-data-types/techniques.md) into controlled vocabularies. The *BioSources* controlled vocabulary contains terms imported from the *CL*, *EFO*, and *UBERON* ontologies.
+ * We organize the [genomes](../02-data-types/02-04-genomes.md), [projects](../02-data-types/02-09-projects.md), [epigenetic marks](../02-data-types/02-05-epigenetic-marks.md), [biosources](../02-data-types/02-06-biosources.md), and [techniques](../02-data-types/02-08-techniques.md) into controlled vocabularies. The *BioSources* controlled vocabulary contains terms imported from the *CL*, *EFO*, and *UBERON* ontologies.
  * Operations - It is possible to refine the data search parameters, aggregate the data, filter it by overlap region, and retrieve it in a user selected format.
 
 The Epigenomic Data contains the experimental data from the [ENCODE](https://www.genome.gov/encode/), [Roadmap Epigenomic Mapping Consortium](http://www.roadmapepigenomics.org/), [BLUEPRINT](http://www.blueprint-epigenome.eu/), and (soon) [DEEP](http://www.deutsches-epigenom-programm.de/epigenomics/) projects.

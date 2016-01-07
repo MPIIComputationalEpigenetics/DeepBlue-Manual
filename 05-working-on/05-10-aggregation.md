@@ -21,22 +21,44 @@ In the following example, we aggregate the retrieved data into tiling regions of
 In the, end we remove the aggregated regions that do not contain any region:
 
 ```python
-(status, blood_related) = server.get_biosource_related("blood", user_key)
-blood_related_names = [x[1] for x in blood_related]
+import xmlrpclib
+import time
 
-(status, blood_samples) = server.list_samples(blood_related_names, {"karyotype":"cancer"}, user_key)
+url = "http://deepblue.mpi-inf.mpg.de/xmlrpc"
+server = xmlrpclib.Server(url, allow_none=True)
+user_key = "anonymous_key"
 
-blood_samples_ids = [x[0] for x in blood_samples]
+(status, experiments) = server.list_experiments("hg19", None,
+                                      "DNA Methylation", "GM19240", "",
+                                      "RRBS", "ENCODE", user_key)
 
-(status, data_id) = server.select_regions(None, "hg19", "DNA Methylation", blood_samples_ids, None, None, "chr1", None, None, user_key)
+experiments_name = [e[1] for e in experiments]
+(status, data_id) = server.select_regions(experiments_name, None, None,
+                                          None, None, None,
+                                          "chr22", None, None, user_key)
 
-(s, regions_id) = server.tiling_regions(100000, "hg19", "chr1", user_key)
+(s, regions_id) = server.tiling_regions(100000, "hg19", "chr22", user_key)
 
 (status, aggr_id) = server.aggregate(data_id, regions_id, "SCORE", user_key)
 
-(status, aggr_filter) = server.filter_regions(aggr_id, "@AGG.COUNT", ">", "0", "integer", user_key)
+(status, aggr_filter) = server.filter_regions(aggr_id, "@AGG.COUNT",
+                                              ">", "0", "number", user_key)
 
-(status, request_id) =  server.get_regions(aggr_filter, "CHROMOSOME,START,END,@AGG.MIN,@AGG.MAX,@AGG.MEDIAN,@AGG.MEAN,@AGG.SD,@AGG.COUNT", user_key)
+(status, request_id) =  server.get_regions(aggr_filter,
+ "CHROMOSOME,START,END,@AGG.MIN,@AGG.MAX, @AGG.MEDIAN,@AGG.MEAN,@AGG.SD,@AGG.COUNT",
+                         user_key)
+
+# Wait for the server processing
+(status, info) = server.info(request_id, user_key)
+request_status = info[0]["state"]
+while request_status != "done" and request_status != "failed":
+  time.sleep(1)
+  (status, info) = server.info(request_id, user_key)
+  request_status = info[0]["state"]
+  print request_status
+
 
 (status, regions) = server.get_request_data(request_id, user_key)
+
+print regions
 ```
