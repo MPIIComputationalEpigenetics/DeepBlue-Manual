@@ -10,7 +10,6 @@ related_names = server.extract_names(related)[1] # get BioSource names
 samples_id = server.extract_ids(samples) # get samples ID
 print server.list_experiments("hg19", "peaks", None, None, samples_id,
                               None, None, user_key)
->>>>>>> 3d399191956afe4e8ff6eae37474409aadaab788
 ```
 
 The result should look like: (partial output)
