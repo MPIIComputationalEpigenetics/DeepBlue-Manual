@@ -49,5 +49,4 @@
    * [Obtaining Regions' Sequences](06-sequences/06-01-obtaining-region-sequences.md)
    * [Patterns](06-sequences/06-02-patterns.md)
 * [Getting Involved](07-involving/07-00-involving.md)
-   * [Future Work](07-involving/07-01-future.md)
 

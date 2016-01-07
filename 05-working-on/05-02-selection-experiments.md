@@ -14,10 +14,10 @@ Finally, we select all ```chromosome``` *chr1* regions from the experiments that
 
 ```python
 (status, blood_related) = server.get_biosource_related("blood", user_key)
-blood_related_names = [x[1] for x in blood_related]
+blood_related_names = server.extract_names(blood_related)[1]
 (status, blood_samples) = server.list_samples(blood_related_names,
                                               {"karyotype":"cancer"}, user_key)
-blood_samples_ids = [x[0] for x in blood_samples]
+blood_samples_ids = server.extract_ids(blood_samples)[1]
 (status, query_id) = server.select_regions(None, "hg19", "DNA Methylation",
                                            blood_samples_ids, None, None,
                                            "chr1", None, None, user_key)

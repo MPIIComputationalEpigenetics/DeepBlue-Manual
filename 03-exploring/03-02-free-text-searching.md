@@ -54,8 +54,7 @@ Please be aware that the terms inside  ```\" \"``` are searched for exactly as t
 #### More Examples
 [Search](http://deepblue.mpi-inf.mpg.de/api.php#api-search) can be used together with the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command:
 
-```
-python
+```python
 (s, result) = server.search("methylation  -histone -modification cancer ",
                             "experiments", user_key)
 for r in result[:3]:   # Select first three elements

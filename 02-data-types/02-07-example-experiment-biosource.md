@@ -7,7 +7,7 @@ user_key = "anonymous_key"
 (s, related) = server.get_biosource_related("colon", user_key)
 related_names = server.extract_names(related)[1] # get BioSource names
 (s, samples) = server.list_samples(related_names, {}, user_key)
-samples_id = server.extract_ids(samples) # get samples ID
+samples_id = server.extract_ids(samples)[1] # get samples ID
 print server.list_experiments("hg19", "peaks", None, None, samples_id,
                               None, None, user_key)
 ```

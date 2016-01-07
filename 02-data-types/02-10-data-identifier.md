@@ -30,9 +30,9 @@ We can use the [info](http://deepblue.mpi-inf.mpg.de/api.php#api-info) command t
 
 ```python
 (s, related) = server.get_biosource_related("blood", user_key)
-related_names = [x[1] for x in related] # get the BioSource names
+related_names = server.extract_names(related)[1] # get the BioSource names
 (s, samples) = server.list_samples(related_names, {}, user_key)
-samples_id = [x[0] for x in samples] # get samples ID
+samples_id = server.extract_ids(samples)[1] # get samples ID
 
 for _id in samples_id[:20] : # the first 20 samples
  print  server.info(_id, user_key)
