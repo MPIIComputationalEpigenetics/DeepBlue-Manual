@@ -4,9 +4,9 @@ The following code is an example of how to select all colon tissue samples, and 
 
 ```python
 (s, related) = server.get_biosource_related("colon", user_key)
-related_names = [x[1] for x in related] # get BioSource names
+related_names = server.extract_names(related)[1] # get BioSource names
 (s, samples) = server.list_samples(related_names, {}, user_key)
-samples_id = [x[0] for x in samples] # get samples ID
+samples_id = server.extract_ids(samples) # get samples ID
 print server.list_experiments(None, None, samples_id, None, None, user_key)
 ```
 
