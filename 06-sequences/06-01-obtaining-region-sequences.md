@@ -15,7 +15,7 @@ user_key = "anonymous_key"
                                       "H3K27ac", "HCT116", "",
                                       "", "ENCODE", user_key)
 
-experiments_name = [e[1] for e in experiments]
+experiments_name = server.extract_names(experiments)[1]
 (status, query_id) = server.select_regions(experiments_name, None, None,
                                           None, None, None,
                                           "chr22", None, None, user_key)

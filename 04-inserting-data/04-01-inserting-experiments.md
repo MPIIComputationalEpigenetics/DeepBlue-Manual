@@ -21,7 +21,7 @@ The data must be in the [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1),
 ### BED Data Format
 
 When inserting an experiment in [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format, the  ```format``` parameter should describe the data content.
-The format contains the field names separated by commas (,) where each field must have a ```name``` and ```type```.
+The format contains the field names separated by commas (,) where each field must be the name of a registered column type.
 Remember that the [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format uses tabs as field separators.
 
 Let us take at the following BED file:
@@ -32,21 +32,8 @@ chr1	200	300	0.0
 chr1	400	600	0.2
 ```
 
-An acceptable format is:
-```python
-format_example_one = "Chromosome:String,Start:Integer,End:Integer,Value:Double"
-```
-The ```format_example_one``` defines a [BED](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) format with four fields.
-We will ignore the content of the field ```Value``` when it is "0.0".
-The field content is first analyzed lexically, i.e., the content of the column, not the value.
-In this case, if the column has "0" as content, it will not be ignored.
-
-Even though this format is valid, it is not the recommended way to describe BED files.
-The problems of with this format are the fields' names and types.
-For example, one user could insert an experiment whose ```Value``` is an integer,
-while a different user might insert another experiment whose ```Value``` is a double.
-Also, different experiments could have different names for fields with the same semantic, for example, *chromosome* could be defined as ```chrom```, ```chr```, or ```chromosome```.
-To help to resolve the problem of column name ambiguity, DeepBlue has the ```Column Types``` data type.
+Its format can be described as ```CHROMOSOME,START,END,VALUE```.
+All experiments and annotation formats must contain a ```CHROMOSOME```, ```START```, and ```END``` columns.
 
 #### Columns Types
 
@@ -87,17 +74,6 @@ Use the command [list_column_types](http://deepblue.mpi-inf.mpg.de/api.php#api-l
 (s, columns) = server.list_column_types(user_key)
 for column in columns:
   print column
-```
-
-The following file format serve as an example:
-```
-milliDel:Integer,milliIns:Integer,chromosome:String,
-start:Integer,end:Integer,strand:String,repName:String,repClass:String```
-
-This can be rewritten using ```column_types``` as:
-
-```
-MILLI_DEL,MILLI_INS,CHROMOSOME,START,END,STRAND,REP_NAME,REP_CLASS
 ```
 
 The standard [BED format](http://genome.ucsc.edu/FAQ/FAQformat.php#format1) has the following specification in DeepBlue:

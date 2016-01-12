@@ -8,7 +8,7 @@ It is recommended to request an account if you use DeepBlue frequently.
 A DeepBlue account gives the following benefits:
 
 * Store and access private data.
-* Listing and caching of your previous requests.
+* Listing and caching yours previous requests.
 
 The process for creating a user account is simple: access the page for [requesting account](http://deepblue.mpi-inf.mpg.de/register.php) and fill the required fields.
 After we process your request, you will receive an email containing a *user_key*.
