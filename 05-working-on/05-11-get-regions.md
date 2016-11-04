@@ -33,14 +33,21 @@ Metafields are fields used to obtain more information about the retrieved region
 It is possible to obtain the region length and the name of the experiment of the given region.
 The following table shows all metafields in the regions experiment metadata:
 
-| Metafield Name   | Data Type              |
-|------------------|------------------------|
-| @NAME            | Region experiment name |
-| @LENGTH          | Region length          |
-| @EPIGENETIC_MARK | Region epigenetic mark |
-| @PROJECT         | Region project name    |
-| @BIOSOURCE       | Region biosource name  |
-| @SAMPLE_ID       | Region sample ID       |
+| Metafield Name   | Data Type                                             |
+|------------------|-------------------------------------------------------|
+| @NAME            | Region experiment name                                |
+| @LENGTH          | Region length                                         |
+| @EPIGENETIC_MARK | Region epigenetic mark                                |
+| @PROJECT         | Region project name                                   |
+| @BIOSOURCE       | Region biosource name                                 |
+| @SAMPLE_ID       | Region sample ID                                      |
+| @SEQUENCE        | Obtain the DNA sequence                               |
+| @STRAND          | Obtain region strand                                  |
+| @GENE_ID         | Obtain the gene ID from this region                   |
+| @GENE_NAME       | Obtain the gene name from this region                 |
+| @COUNT.MOTIF     | Count how many times the motif appears in this region |
+| @CALCULATED      | Execute an Lua code                                   |
+
 
 The next example works as the previous one, but now returning the experiment name, length and BioSource name:
 
