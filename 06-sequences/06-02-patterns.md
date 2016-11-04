@@ -10,21 +10,15 @@ status, _id = server.find_pattern("TATA", "hg19_only_chr19", True, user_key)
 print server.info(_id, user_key)
 ```
 
-### Patterns Metafield
+### Motif Metafield
 
-It is possible to count how many times a pattern occours in a region with the metafields ``@COUNT.NON-OVERLAP(PATTERN)`` and ``@COUNT.NON-OVERLAP(PATTERN)``:
-
-**Important**: You need permission to include annotations for using the ```find_pattern```.
+It is possible to count how many times a pattern occurs in a region with the meta-field ``@COUNT.MOTIF(PATTERN)``.
 
 ```python
-(status, _id) = server.find_pattern("CG", "hg19", False, user_key)
-(status, _id) = server.find_pattern("TATA", "hg19", False, user_key)
-(status, _id) = server.find_pattern("(TATA|CG)", "hg19", False, user_key)
-
 (status, ann) = server.tiling_regions(50000, "hg19", "chr1", user_key)
 
-fmt = "CHROMOSOME,START,END,@NAME,@LENGTH,@COUNT.NON-OVERLAP(TATA),\
-       @COUNT.NON-OVERLAP(CG),@COUNT.NON-OVERLAP((TATA|CG))"
+fmt = "CHROMOSOME,START,END,@NAME,@LENGTH,@COUNT.MOTIF(TATA),\
+       @COUNT.MOTIF(CG),@COUNT.MOTIF((TATA|CG))"
 (status, regions_request_id) = server.get_regions(ann, fmt, user_key)
 
 # Wait for the server processing
