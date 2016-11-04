@@ -46,7 +46,7 @@ The following table shows all metafields in the regions experiment metadata:
 | @GENE_ID         | Obtain the gene ID from this region                   |
 | @GENE_NAME       | Obtain the gene name from this region                 |
 | @COUNT.MOTIF     | Count how many times the motif appears in this region |
-| @CALCULATED      | Execute an Lua code                                   |
+| @CALCULATED      | Execute a Lua code                                    |
 
 
 The next example works as the previous one, but now returning the experiment name, length and BioSource name:
