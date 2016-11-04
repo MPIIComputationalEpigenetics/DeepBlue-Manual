@@ -2,6 +2,6 @@
 
 Please send comments to [deepblue@mpi-inf.mpg.de](mailto:deepblue@mpi-inf.mpg.de).
 
-We will release the source code soon.
+The code is available at [https://github.com/MPIIComputationalEpigenetics/DeepBlue](https://github.com/MPIIComputationalEpigenetics/DeepBlue).
 
 You can suggest modifications to this manual at [https://github.com/MPIIComputationalEpigenetics/DeepBlue-Manual](https://github.com/MPIIComputationalEpigenetics/DeepBlue-Manual)
